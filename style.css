@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 10px;
+
+  background-color: #453732;
+  user-select: none;
+  -webkit-app-region: drag;
+}
+
+button {
+    justify-content: right;
+}
+
+.app {
+  padding: 16px;
+}
+
+button,
+input,
+textarea,
+select {
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+}

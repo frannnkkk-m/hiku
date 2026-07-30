@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hiku</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <div class="window-controls">
+        <button class="min-btn" title="Minimize" style="background-color: saddlebrown; border-radius: 8px;">-</button>
+        <button class="min-btn" title="Minimize" style="background-color: saddlebrown; border-radius: 8px;">X</button>
+      </div>
+      <a href="index2.html">
+        <button id="testBtn">Info</button>
+      </a>
+    </div>
+    <div class="player-container">
+      <div class="screen" id="dropArea">
+        <p class="song-title">Arrastra tu canción aquí</p>
+        <div class="controls">
+          <button id="Back" class="img-button"><img src="arrow_left.png" alt="Back"></button>
+          <button id="Pause" class="img-button"><img id="playPauseIcon" src="Group 3.png" alt="Pause"></button>
+          <button id="Forward" class="img-button"><img src="arrow_right.png" alt="Forward"></button>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+      <input type="file" id="fileInput" accept="audio/*" style="display: none;" />
+      <audio id="audio"></audio>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
