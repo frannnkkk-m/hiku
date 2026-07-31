@@ -1,8 +1,11 @@
 {
   "name": "electron-app",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "src/main/main.js",
   "scripts": {
     "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^43.2.0"
   }
 }

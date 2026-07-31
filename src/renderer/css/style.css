@@ -8,7 +8,6 @@ body {
   width: 100vw;
   height: 100vh;
   border-radius: 10px;
-
   background-color: #453732;
   user-select: none;
   -webkit-app-region: drag;
@@ -16,7 +15,7 @@ body {
 
 button {
     justify-content: right;
-}
+
 
 .app {
   padding: 16px;

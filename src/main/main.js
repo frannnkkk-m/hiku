@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain  } = require("electron");
 
 function createWindow() {
+  const path = require('path');
   const win = new BrowserWindow({
     width: 292,
     height: 350,
@@ -15,7 +16,7 @@ function createWindow() {
     }
   });
 
-  win.loadFile("index.html");
+  win.loadFile(path.join(__dirname, '..', 'renderer', 'index.html'));
 }
 
 app.whenReady().then(createWindow);
