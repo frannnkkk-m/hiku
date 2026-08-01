@@ -8,14 +8,67 @@ body {
   width: 100vw;
   height: 100vh;
   border-radius: 10px;
-  background-color: #453732;
+   background-color: var(--background, #55443e);
+  color: var(--text-color, black);
   user-select: none;
   -webkit-app-region: drag;
+  button,
+  select,
+  input,
+  a {
+    -webkit-app-region: no-drag;
+}
 }
 
-label {
-    border-radius: 500px;
+body:has(select option[value="dark"]:checked){
+  --background: #291f1b;
+  --text-color: white;
 }
 
+.app {
+  position: relative; 
+}
 
- 
+.window-controls {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 6px; 
+}
+
+.forward-button{
+  position: absolute;
+  right: 35px;
+  bottom: 55px;
+}
+
+.back-button {
+  position: absolute;
+  left: 35px;
+  bottom: 55px;
+}
+
+.pause-button {
+  position: absolute;
+  margin: 85px;
+  left: 37px;
+}
+
+.navigation ul li{
+    text-align: center;
+    list-style-type: none;
+    bottom: 70px;
+}
+
+.nav_container {
+  background-color: #463833;
+  width: min(90%);
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav_link{
+  
+}

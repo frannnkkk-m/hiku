@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Hiku</title>
-    <link rel="stylesheet" href="/src/renderer/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
@@ -12,19 +12,34 @@
         <button class="min-btn" title="Minimize" style="background-color: saddlebrown; border-radius: 8px;">-</button>
         <button class="clse-btn" title="Close" style="background-color: saddlebrown; border-radius: 8px;">X</button>
       </div>
-      <a href="index2.html">
-        <button id="testBtn" style="background-color: saddlebrown; border-radius: 10px;">i</button>
-      </a>
-      <input type="button" id="darkmode" style="background-color: saddlebrown; border-radius: 8px;">
-      <label for="darkmode"></label>
+      <div class="navigation">
+        <button class="hamburger" onclick="show()" style="background-color: saddlebrown; border-radius: 10px;">
+          <div id="bar1" class="bar"></div>
+          <div id="bar2" class="bar"></div>
+          <div id="bar3" class="bar"></div>
+          i
+        </button>
+        <nav>
+          <ul>
+            <li><a >Artista: </a></li>
+            <li><a >Productor: </a></li>
+            <li><a >Fecha: </a></li>
+          </ul>
+        </nav>
+      </div>
+      <select style="background-color: saddlebrown; border-radius: 8px;">
+        <option value="light">light</option>
+        <option value="dark">dark</option>
+      </select>
     </div>
+
     <div class="player-container">
       <div class="screen" id="dropArea">
         <p class="song-title">Arrastra tu canción aquí</p>
         <div class="controls">
-          <button id="Back" class="img-button"><img src="../../assets/images/arrow_left.png" alt="Back"></button>
-          <button id="Pause" class="img-button"><img id="playPauseIcon" src="../../assets/images/Group 4.png" alt="Pause"></button>
-          <button id="Forward" class="img-button"><img src="../../assets/images/arrow_right.png" alt="Forward"></button>
+          <button id="Back" class="back-button"><img src="../../assets/images/arrow_left.png" alt="Back"></button>
+          <button id="Pause" class="pause-button"><img id="playPauseIcon" src="../../assets/images/Group 4.png" alt="Pause"></button>
+          <button id="Forward" class="forward-button"><img src="../../assets/images/arrow_right.png" alt="Forward"></button>
         </div>
         <div class="progress-bar-container">
           <div class="progress-bar" id="progressBar"></div>
