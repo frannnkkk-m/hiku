@@ -13,18 +13,9 @@ body {
   -webkit-app-region: drag;
 }
 
-button {
-    justify-content: right;
-
-
-.app {
-  padding: 16px;
+label {
+    border-radius: 500px;
 }
 
-button,
-input,
-textarea,
-select {
-  -webkit-app-region: no-drag;
-  cursor: pointer;
-}
+
+ 

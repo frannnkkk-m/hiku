@@ -10,14 +10,16 @@
     <div class="app">
       <div class="window-controls">
         <button class="min-btn" title="Minimize" style="background-color: saddlebrown; border-radius: 8px;">-</button>
-        <button class="min-btn" title="Minimize" style="background-color: saddlebrown; border-radius: 8px;">X</button>
+        <button class="clse-btn" title="Close" style="background-color: saddlebrown; border-radius: 8px;">X</button>
       </div>
       <a href="index2.html">
-        <button id="testBtn">Info</button>
+        <button id="testBtn" style="background-color: saddlebrown; border-radius: 10px;">i</button>
       </a>
+      <input type="button" id="darkmode" style="background-color: saddlebrown; border-radius: 8px;">
+      <label for="darkmode"></label>
     </div>
     <div class="player-container">
-      <div class="screen" id="dropArea">Info
+      <div class="screen" id="dropArea">
         <p class="song-title">Arrastra tu canción aquí</p>
         <div class="controls">
           <button id="Back" class="img-button"><img src="../../assets/images/arrow_left.png" alt="Back"></button>
@@ -32,6 +34,6 @@
       <audio id="audio"></audio>
     </div>
 
-    <script src="/js/script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

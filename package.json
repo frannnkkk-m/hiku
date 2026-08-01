@@ -1,7 +1,7 @@
 {
   "name": "electron-app",
   "version": "1.0.0",
-  "main": "src/main/main.js",
+  "main": "src/renderer/js/main.js",
   "scripts": {
     "start": "electron ."
   },
