@@ -5,10 +5,8 @@
 
 body {
   margin: 0;
-  width: 100vw;
-  height: 100vh;
   border-radius: 10px;
-   background-color: var(--background, #55443e);
+  background-color: var(--background, #55443e);
   color: var(--text-color, black);
   user-select: none;
   -webkit-app-region: drag;
@@ -20,13 +18,57 @@ body {
 }
 }
 
+
 body:has(select option[value="dark"]:checked){
   --background: #291f1b;
   --text-color: white;
 }
 
-.app {
-  position: relative; 
+
+button {
+  padding: 10px 20px;
+}
+
+.botons-1{
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.botons-2{
+  position: absolute;
+  margin: 20px;
+  cursor:pointer;
+  top: 80%;
+}
+
+.btnRep{
+  background: #000000;
+  position: relative;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.btnRep:hover{
+  background: #373370;
+}
+
+.btnUp{
+  background: #000000;
+  position: relative;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.btnUp:hover{
+  background: #373370;
 }
 
 .window-controls {
@@ -37,22 +79,9 @@ body:has(select option[value="dark"]:checked){
   gap: 6px; 
 }
 
-.forward-button{
-  position: absolute;
-  right: 35px;
-  bottom: 55px;
-}
-
-.back-button {
-  position: absolute;
-  left: 35px;
-  bottom: 55px;
-}
-
-.pause-button {
-  position: absolute;
-  margin: 85px;
-  left: 37px;
+#uploadMusicIcon{
+  width: 50px;
+  height: 50px;
 }
 
 .navigation ul li{
@@ -72,3 +101,5 @@ body:has(select option[value="dark"]:checked){
 .nav_link{
   
 }
+
+

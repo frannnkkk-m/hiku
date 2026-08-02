@@ -7,6 +7,7 @@
   </head>
 
   <body>
+  <div>
     <div class="app">
       <div class="window-controls">
         <button class="min-btn" title="Minimize" style="background-color: saddlebrown; border-radius: 8px;">-</button>
@@ -33,13 +34,12 @@
       </select>
     </div>
 
-    <div class="player-container">
+    <div class="container">
       <div class="screen" id="dropArea">
-        <p class="song-title">Arrastra tu canción aquí</p>
-        <div class="controls">
-          <button id="Back" class="back-button"><img src="../../assets/images/arrow_left.png" alt="Back"></button>
-          <button id="Pause" class="pause-button"><img id="playPauseIcon" src="../../assets/images/Group 4.png" alt="Pause"></button>
-          <button id="Forward" class="forward-button"><img src="../../assets/images/arrow_right.png" alt="Forward"></button>
+        <div class="botons-1">
+          <button class="btnRep"><img src="../../assets/images/arrow_left.png" alt="Back"></button>
+          <button class="btnRep"><img src="../../assets/images/Group 4.png" alt="Pause"></button>
+          <button class="btnRep"><img src="../../assets/images/arrow_right.png" alt="Forward"></button>
         </div>
         <div class="progress-bar-container">
           <div class="progress-bar" id="progressBar"></div>
@@ -49,6 +49,19 @@
       <audio id="audio"></audio>
     </div>
 
+    <div class="container">
+      <div class="screen" id="dropArea">
+        <div class="botons-2">
+          <button id="btnUp" class="btnUp"><img id="uploadMusicIcon" src="../../assets/images/upload btn.png"></button>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+      <input type="file" id="fileInput" accept="audio/*" style="display: none;" />
+      <audio id="audio"></audio>
+    </div>
+  </div>
     <script src="js/script.js"></script>
   </body>
 </html>

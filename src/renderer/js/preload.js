@@ -4,5 +4,6 @@ console.log('Preload script loaded');
 
 contextBridge.exposeInMainWorld('electronAPI', {
   minimizeWindow: () => ipcRenderer.send('minimize-window'),
-  closeWindow: () => ipcRenderer.send('close-window')
+  closeWindow: () => ipcRenderer.send('close-window'),
+  openFileDialog: () => ipcRenderer.invoke('dialog:openFile')
 });
