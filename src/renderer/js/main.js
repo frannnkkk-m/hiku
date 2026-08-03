@@ -6,8 +6,8 @@ console.log('Hiku Iniciado👋')
 const createWindow = () => {
   const win = new BrowserWindow({ 
     show: false,
-    width: 800,
-    height: 600,
+    width: 350,
+    height: 450,
     resizable: false,
     maximizable: false,
     fullscreenable: false,
@@ -17,13 +17,15 @@ const createWindow = () => {
     webPreferences: {
       contextIsolation: true,
       nodeIntegration: false,
-      preload: path.join(__dirname, 'preload.js') // ajustá la ruta según donde esté tu preload.js
+      preload: path.join(__dirname, 'preload.js')
     }
   })
   win.loadFile(path.join(__dirname, '..', 'index.html'));
   ipcMain.on('minimize-window', () => win.minimize());
   ipcMain.on('close-window', () => win.close());
   win.once('ready-to-show', () => {win.show()});
+
+  
 }
 
 ipcMain.handle('dialog:openFile', async (event, args) => {
@@ -35,4 +37,9 @@ ipcMain.handle('dialog:openFile', async (event, args) => {
 });
 
 
+
 app.whenReady().then(createWindow);
+
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") app.quit();
+});

@@ -13,49 +13,39 @@
         <button class="min-btn" title="Minimize" style="background-color: saddlebrown; border-radius: 8px;">-</button>
         <button class="clse-btn" title="Close" style="background-color: saddlebrown; border-radius: 8px;">X</button>
       </div>
-      <div class="navigation">
-        <button class="hamburger" onclick="show()" style="background-color: saddlebrown; border-radius: 10px;">
-          <div id="bar1" class="bar"></div>
-          <div id="bar2" class="bar"></div>
-          <div id="bar3" class="bar"></div>
-          i
-        </button>
-        <nav>
-          <ul>
-            <li><a >Artista: </a></li>
-            <li><a >Productor: </a></li>
-            <li><a >Fecha: </a></li>
-          </ul>
-        </nav>
-      </div>
-      <select style="background-color: saddlebrown; border-radius: 8px;">
-        <option value="light">light</option>
-        <option value="dark">dark</option>
-      </select>
+    </div>
+
+    <input type="checkbox" id="modooscuro">
+    <label for="modooscuro"></label>
+
+    <div class="info" id="infoPanel">
+      <button id="closeInfoBtn" style="background-color: saddlebrown; border-radius: 8px;">X</button>
+      <p>Artista: </p>
+      <p>Productor: </p>
+      <p>Fecha de Publicación: </p>
+    </div>
+
+    <div class="infoBtn">
+      <button class="inf-btn" id="infoBtn" style="background-color: saddlebrown; border-radius: 10px;">i</button>
     </div>
 
     <div class="container">
-      <div class="screen" id="dropArea">
+      <div class="screen" id="dropAreaPlay">
         <div class="botons-1">
-          <button class="btnRep"><img src="../../assets/images/arrow_left.png" alt="Back"></button>
-          <button class="btnRep"><img src="../../assets/images/Group 4.png" alt="Pause"></button>
-          <button class="btnRep"><img src="../../assets/images/arrow_right.png" alt="Forward"></button>
+          <button class="btnRep" id="backBtn"><img src="../../assets/images/arrow_left.png" alt="Back"></button>
+          <button class="btnRep" id="pauseBtn"><img id="playPauseIcon" src="../../assets/images/Group 3.png" alt="Pause"></button>
+          <button class="btnRep" id="forwardBtn"><img src="../../assets/images/arrow_right.png" alt="Forward"></button>
         </div>
         <div class="progress-bar-container">
           <div class="progress-bar" id="progressBar"></div>
         </div>
       </div>
-      <input type="file" id="fileInput" accept="audio/*" style="display: none;" />
-      <audio id="audio"></audio>
     </div>
 
     <div class="container">
-      <div class="screen" id="dropArea">
+      <div class="screen" id="dropAreaUpload">
         <div class="botons-2">
           <button id="btnUp" class="btnUp"><img id="uploadMusicIcon" src="../../assets/images/upload btn.png"></button>
-        </div>
-        <div class="progress-bar-container">
-          <div class="progress-bar" id="progressBar"></div>
         </div>
       </div>
       <input type="file" id="fileInput" accept="audio/*" style="display: none;" />

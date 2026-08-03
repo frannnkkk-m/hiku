@@ -6,33 +6,30 @@
 body {
   margin: 0;
   border-radius: 10px;
-  background-color: var(--background, #55443e);
+  background-color: var(--background, #332823);
   color: var(--text-color, black);
   user-select: none;
   -webkit-app-region: drag;
   button,
   select,
   input,
-  a {
+  a,
+  label {
     -webkit-app-region: no-drag;
 }
 }
 
-
-body:has(select option[value="dark"]:checked){
+body:has(#modooscuro:checked){
   --background: #291f1b;
   --text-color: white;
 }
 
-
-button {
-  padding: 10px 20px;
-}
+/* --------------------Body--------------------------- */
 
 .botons-1{
   position: absolute;
   left: 50%;
-  top: 90%;
+  top: 75%;
   transform: translate(-50%, -50%);
 
   display: flex;
@@ -42,9 +39,11 @@ button {
 
 .botons-2{
   position: absolute;
-  margin: 20px;
+  width: 5px;
+  height: 5px;
+  margin: 10px;
   cursor:pointer;
-  top: 80%;
+  top: 60%;
 }
 
 .btnRep{
@@ -71,6 +70,8 @@ button {
   background: #373370;
 }
 
+/* ---------------Botones Play, Back, Next----------------------- */
+
 .window-controls {
   position: absolute;
   top: 8px;
@@ -79,27 +80,73 @@ button {
   gap: 6px; 
 }
 
+/* -------------Botones Minimiazr y Cerrar------------------------ */
+
 #uploadMusicIcon{
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
+  top: 40px;
 }
 
-.navigation ul li{
-    text-align: center;
-    list-style-type: none;
-    bottom: 70px;
+/*-------------------Subir Archivo Musica---------------------- */
+
+label {
+  top: 35px;
+  left: 20px;
+  width: 30px;
+  height: 15px;
+  position: relative;
+  display: block;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+label:after{
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background: saddlebrown;
+  border-radius: 200px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.nav_container {
-  background-color: #463833;
-  width: min(90%);
-  margin: 0 auto;
-  align-items: center;
-  justify-content: center;
+input[type="checkbox"]{
+  display: none;
 }
 
-.nav_link{
-  
+input:checked + label:after {
+  left: 10px;
+  transform: translateX(90%);
+  background: #291f1b;
 }
 
+/* ----------------------Botón Dark Mode------------------------*/
 
+.inf-btn {
+  position: relative;
+  top: 270px;
+  left: 300px;
+}
+
+.info {
+  position: fixed;
+  top: 30px;
+  right: -100%;
+  width: 340px;
+  height: 100%;
+  background-color: #221b18;
+  color: white;
+  padding: 16px;
+  transition: right 0.3s ease;
+  z-index: 10;
+}
+
+.info.open {
+  right: 0;
+}
+
+/* --------------------Botón Info-------------------------- */
