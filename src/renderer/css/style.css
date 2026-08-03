@@ -58,14 +58,6 @@ body:has(#modooscuro:checked){
   background: #373370;
 }
 
-.btnUp{
-  background: #000000;
-  position: relative;
-  border-radius: 100px;
-  cursor: pointer;
-  transition: all .3s ease;
-}
-
 .btnUp:hover{
   background: #373370;
 }
@@ -74,10 +66,17 @@ body:has(#modooscuro:checked){
 
 .window-controls {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 30px; /* alto de tu "barra de título" */
   display: flex;
-  gap: 6px; 
+  justify-content: flex-end; /* mantiene los botones pegados a la derecha */
+  align-items: center;
+  gap: 6px;
+  padding-right: 8px;
+  background-color: #0a0706;
 }
 
 /* -------------Botones Minimiazr y Cerrar------------------------ */
@@ -86,6 +85,14 @@ body:has(#modooscuro:checked){
   width: 30px;
   height: 30px;
   top: 40px;
+}
+
+.btnUp{
+  background: #000000;
+  position: relative;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all .3s ease;
 }
 
 /*-------------------Subir Archivo Musica---------------------- */
@@ -150,3 +157,11 @@ input:checked + label:after {
 }
 
 /* --------------------Botón Info-------------------------- */
+
+#discoGif {
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+  left: 70px;
+}

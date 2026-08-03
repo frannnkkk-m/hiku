@@ -25,21 +25,41 @@ document.querySelector('.clse-btn').addEventListener('click', async() => {
 document.getElementById('btnUp').addEventListener('click', async () => {
   try {
     const result = await window.electronAPI.openFileDialog();
-  
-    if(!result.canceled) {
-      console.log('Archivos Seleccionados: ', result.filePaths);
+
+    if (!result.canceled && result.filePaths.length > 0) {
+      handleFiles(result.filePaths);
+    } else {
+      console.log('Cancelaste la selección');
     }
-
-    else {console.log('Cancelaste la selección')
-
-    }
-
   } catch (error) {
-    console.error('Error al abrir dialogo', error)
+    console.error('Error al abrir dialogo', error);
+  }
+
+  forwardBtn.addEventListener("click", () => {
+  if (playlist.length === 0) return;
+
+  if (currentIndex < playlist.length - 1) {
+    currentIndex++;
+    loadSong(currentIndex);
+  } else {
+    // No hay más canciones después → termina la reproducción
+    audio.pause();
+    audio.currentTime = 0;
+    isPlaying = false;
+    playPauseIcon.src = "../../assets/images/Group 3.png"; // ícono de play
+    progressBar.style.width = "0%";
   }
 });
 
-/* ---------------------Botón para seleccionar canción------------------------------- */
+backBtn.addEventListener("click", () => {
+  if (playlist.length === 0) return;
+  currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
+  loadSong(currentIndex);
+});
+
+});
+
+/* ---------------------Botón para seleccionar canción (full IA)------------------------------- */
 
 const audio = document.getElementById("audio");
 const pauseBtn = document.getElementById("pauseBtn");
@@ -56,24 +76,51 @@ const coverImage = [
   "disco.gif"
 ];
 
-function handleFiles(files) {
-  for (const file of files) {
-    if (!file || !file.type.startsWith("audio/")) continue;
-
-    const url = URL.createObjectURL(file);
-    const fileName = file.name.replace(/\.[^/.]+$/, "");
+function handleFiles(filePaths) {
+  for (const filePath of filePaths) {
+    const fileName = filePath.split(/[\\/]/).pop().replace(/\.[^/.]+$/, "");
 
     const song = {
       name: fileName,
-      url: url,
+      url: `file://${filePath.replace(/\\/g, '/')}`,
       cover: "disco.gif",
     };
 
     playlist.push(song);
   }
 
-  if (currentIndex === -1 && playlist.length > 0) {
-    currentIndex = 0;
-    loadSong(currentIndex);
-  }
+  currentIndex = playlist.length -1;
+  loadSong(currentIndex);
 }
+
+let isPlaying = false;
+const playPauseIcon = document.getElementById("playPauseIcon");
+
+function loadSong(index) {
+  const song = playlist[index];
+  if (!song) return;
+  audio.src = song.url;
+  audio.play();
+  isPlaying = true;
+  playPauseIcon.src = "../../assets/images/Group 4.png"; // ícono de pausa
+}
+
+pauseBtn.addEventListener("click", () => {
+  if (!audio.src) return;
+  if (isPlaying) {
+    audio.pause();
+    playPauseIcon.src = "../../assets/images/Group 3.png"; // play
+  } else {
+    audio.play();
+    playPauseIcon.src = "../../assets/images/Group 4.png"; // pause
+  }
+  isPlaying = !isPlaying;
+});
+
+audio.addEventListener("timeupdate", () => {
+  if (!audio.duration) return;
+  const progress = (audio.currentTime / audio.duration) * 100;
+  progressBar.style.width = `${progress}%`;
+});
+
+/*-------------ESTA PARTE FUE HECHA CON IA, NO SÉ SI LA DEJE--------------- */
