@@ -124,3 +124,21 @@ audio.addEventListener("timeupdate", () => {
 });
 
 /*-------------ESTA PARTE FUE HECHA CON IA, NO SÉ SI LA DEJE--------------- */
+
+const volumenBtn = document.getElementById('volumenBtn');
+const volumenPanel = document.getElementById('volumenPanel');
+const volumenContainer = document.getElementById('volumenContainer')
+
+
+volumenBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  volumenContainer.classList.toggle('open');
+});
+
+document.addEventListener('click', (e) => {
+  if(!volumenContainer.contains(e.target) && !volumenBtn.contains(e.target)) {
+    volumenContainer.classList.remove('open')
+  }
+})
+
+/* ----------------------------------------Botón de Volumen (IA pa hacer que se oculte..) ------------------------------------------ */

@@ -159,16 +159,32 @@ input:checked + label:after {
 /* --------------------Botón Info-------------------------- */
 
 #discoGif {
-  width: 30px;
-  height: 30px;
-  display: block;
-  margin: 0 auto;
-  left: 50px;
-  top: 70px;
+  position: relative;
 }
 
 /* ---------------------Imagen Disco---------------------- */
 
-.rotated {
+.volume-container {
+  position: fixed;
+  right: -20px;
+  bottom: 190px;
+  display: none;
   transform: rotate(-90deg);
+}
+
+.volumeBtn {
+ position: relative;
+ background: saddlebrown;
+ border-radius: 8px;
+ right: -280px;
+ bottom: -80px;
+}
+
+.volume-container.open {
+  display: block;
+}
+
+#volumeIcon {
+  width: 25px;
+  height: 25px;
 }
