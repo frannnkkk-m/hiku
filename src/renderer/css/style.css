@@ -163,5 +163,12 @@ input:checked + label:after {
   height: 30px;
   display: block;
   margin: 0 auto;
-  left: 70px;
+  left: 50px;
+  top: 70px;
+}
+
+/* ---------------------Imagen Disco---------------------- */
+
+.rotated {
+  transform: rotate(-90deg);
 }
